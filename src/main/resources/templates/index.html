@@ -36,6 +36,42 @@
 		</nav>
 	</div>
 
+	
+	<!-- table  -->
+	<div class="container mt-5">
+	<h1>Informaticio</h1>
+
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
+		ad dolore rem facere soluta error excepturi placeat sunt omnis nostrum
+		quis non molestiae aperiam temporibus architecto, corporis cumque
+		dolores natus.</p><br>
+		
+		<h1>Hola </h1>
+		<!-- <span th:text=${persona.firstname} </span> -->
+		<table class="table mt-5">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">First</th>
+					<th scope="col">Last</th>
+					<th scope="col">Date of birth</th>
+					<th scope="col">Country</th>
+				</tr>
+			</thead>
+			<tbody  th:each="person : ${list}">
+				<tr>
+					<th scope="row">1</th>
+					<td th:text=${person.firstname}></td>
+					<td th:text=${person.lastname}></td>
+					<td th:text=${person.date}></td>
+					<td th:text=${person.country}></td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+
+
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
