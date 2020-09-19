@@ -3,12 +3,18 @@ package com.gortiz.proyectexample.model;
 import java.util.Date;
 
 public class Person {
+	int id;
 	String firstname;
 	String lastname;
 	Date date;
 	String country;
 	
-	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getFirstname() {
 		return firstname;
 	}
@@ -33,18 +39,19 @@ public class Person {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public Person(String firstname, String lastname, Date date, String country) {
+	public Person(int id, String firstname, String lastname, Date date, String country) {
 		super();
+		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.date = date;
 		this.country = country;
 	}
-	@Override
-	public String toString() {
-		return "Person [firstname=" + firstname + ", lastname=" + lastname + ", date=" + date + ", country=" + country
-				+ "]";
+	public Person(int id2, String firstname2, String lastname2, Object date2, String country2) {
+		// TODO Auto-generated constructor stub
 	}
+	
+	
 	
 	
 
