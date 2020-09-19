@@ -47,9 +47,6 @@ public class Person {
 		this.date = date;
 		this.country = country;
 	}
-	public Person(int id2, String firstname2, String lastname2, Object date2, String country2) {
-		// TODO Auto-generated constructor stub
-	}
 	
 	
 	

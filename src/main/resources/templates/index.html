@@ -8,6 +8,9 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
 	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>gortiz</title>
 </head>
 
@@ -39,7 +42,7 @@
 
 	<!-- table  -->
 	<div class="container mt-5">
-		<h1>Informaticio</h1>
+		<h1>Information</h1>
 
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
 			ad dolore rem facere soluta error excepturi placeat sunt omnis
@@ -63,13 +66,17 @@
 			</thead>
 			<tbody th:each="person : ${list}">
 				<tr>
-					
+
 					<td th:text=${person.id}></td>
 					<td th:text=${person.firstname}></td>
 					<td th:text=${person.lastname}></td>
 					<td th:text=${person.date}></td>
 					<td th:text=${person.country}></td>
-					<td><a th:href="@{/edit/{id}(id=${person.id})}">Edit</a></td>
+					<td><a th:href="@{edit/{id}(id=${person.id})}"
+						class="btn btn-success btn-sm  fas fa-user-edit">Edit</a></td>
+
+					<td><a th:href="@{delete/{id}(id=${person.id})}"
+						class="btn btn-danger btn-sm  fa fa-car">Delete</a></td>
 				</tr>
 
 			</tbody>
