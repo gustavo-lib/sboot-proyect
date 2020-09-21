@@ -50,9 +50,9 @@
 			cumque dolores natus.</p>
 		<br>
 
-		<h1>Hola</h1>
 		<!-- <span th:text=${persona.firstname} </span> -->
-		<table class="table mt-5">
+		<a href="@{/form}"  class="btn btn-primary"> New</a>
+		<table class="table mt-2 text-center">
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col">Id</th>
@@ -70,7 +70,7 @@
 					<td th:text=${person.id}></td>
 					<td th:text=${person.firstname}></td>
 					<td th:text=${person.lastname}></td>
-					<td th:text=${person.date}></td>
+					<td th:text=${person.email}></td>
 					<td th:text=${person.country}></td>
 					<td><a th:href="@{edit/{id}(id=${person.id})}"
 						class="btn btn-success btn-sm  fas fa-user-edit">Edit</a></td>
