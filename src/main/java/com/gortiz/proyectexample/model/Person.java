@@ -67,6 +67,11 @@ public class Person {
 		this.email = email;
 		this.country = country;
 	}
+
+
+	public Person() {
+		
+	}
 	
 	
 	

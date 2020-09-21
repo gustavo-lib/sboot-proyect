@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,13 +54,17 @@ public class indexController {
 		return "delete";
 	}
 	
-	@GetMapping("/form")
-	public String formShow() {
+	@GetMapping("showform")
+	public String formShow(Model model) {
+		//Person persona=new Person();
+		model.addAttribute("person", new Person());
 		return "form";
 	}
 	
-	@PostMapping("/form")
-	public String redirect() {
-		return "joder";
+	@PostMapping("add")
+	public String redirect(@ModelAttribute("person") Person p) {
+		//falta la validacion de persona que no sean nulos y ademas que no sean tipos de datos erroneos
+		people.add(p);
+		return "redirect:list";
 	}
 }
