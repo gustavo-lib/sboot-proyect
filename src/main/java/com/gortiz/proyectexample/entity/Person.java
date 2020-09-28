@@ -94,6 +94,16 @@ public class Person implements Serializable {
 		this.createAt = createAt;
 	}
 
+	public Person() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", country=" + country
+				+ ", email=" + email + ", createAt=" + createAt + "]";
+	}
+
 	
 
 	
