@@ -7,13 +7,13 @@ import com.gortiz.proyectexample.entity.Person;
 
 public interface personService {
 
-	public Person findPerson();
+	public Person findPerson(long id);
 	
 	public List<Person> getListPerson();
 	
 	public Person createPerson(Person p);
 	
-	public void update();
+	public Person update(Person p);
 	
-	public int delete(long id);
+	public void delete(long id);
 }

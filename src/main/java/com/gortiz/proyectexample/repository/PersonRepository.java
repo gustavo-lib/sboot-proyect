@@ -8,6 +8,8 @@ import com.gortiz.proyectexample.entity.Person;
 
 
 @Repository
-public interface PersonRepository extends JpaRepository<Person, Long>{
+public interface PersonRepository extends  JpaRepository<Person, Long >{
+	
+	// public abstract Person findById(Long id);
 
 }

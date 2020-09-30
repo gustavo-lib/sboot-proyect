@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +8,12 @@
 	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
 	crossorigin="anonymous">
 
-<title>gortiz</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Document</title>
 </head>
-
 <body>
-
+	<!--  -->
 	<div class="bs-example">
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 			<a href="#" class="navbar-brand">GO</a>
@@ -24,10 +24,9 @@
 
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<div class="navbar-nav">
-					<a href="#" class="nav-item nav-link active">Home</a>
-				    <a  th:href="@{/about/home}"
-						class="nav-item nav-link">About</a> <a th:href="@{/home/product}"
-						class="nav-item nav-link">Products</a>
+					<a th:href="@{/home/list}" class="nav-item nav-link active">Home</a> <a
+						th:href="@{/about/home}" class="nav-item nav-link">About</a> <a
+						th:href="@{/home/product}" class="nav-item nav-link">Products</a>
 				</div>
 				<form class="form-inline ml-auto">
 					<input type="text" class="form-control mr-sm-2"
@@ -38,55 +37,11 @@
 		</nav>
 	</div>
 
-
-	<!-- table  -->
-	<div class="container mt-5">
-		<h1>Information</h1>
-
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
-			ad dolore rem facere soluta error excepturi placeat sunt omnis
-			nostrum quis non molestiae aperiam temporibus architecto, corporis
-			cumque dolores natus.</p>
-		<br>
-
-		<!-- <span th:text=${persona.firstname} </span> -->
-		<a href="/home/showform" class="btn btn-primary"> New</a>
-		<table class="table mt-2 text-center">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Id</th>
-					<th scope="col">First</th>
-					<th scope="col">Last</th>
-					<th scope="col">Email</th>
-					<th scope="col">Country</th>
-					<th scope="col">Edit</th>
-					<th scope="col">Delete</th>
-				</tr>
-			</thead>
-			<tbody th:each="person : ${list}">
-				<tr>
-
-					<td th:text=${person.id}></td>
-					<td th:text=${person.firstname}></td>
-					<td th:text=${person.lastname}></td>
-					<td th:text=${person.email}></td>
-					<td th:text=${person.country}></td>
-					<td><a th:href="@{edit/{id}(id=${person.id})}" 
-						class="btn btn-success btn-sm ">Edit</a></td>
-
-					<td><a th:href="@{delete/{id}(id=${person.id})}" 
-						class="btn btn-danger btn-sm  ">Delete</a></td>
-				</tr>
-
-			</tbody>
-		</table>
-	</div>
-
 	<!--  -->
 
+	<h1>About </h1>
+	
 
-
-	<!--  -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
@@ -98,6 +53,7 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
 		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
 		crossorigin="anonymous"></script>
-</body>
 
+
+</body>
 </html>
