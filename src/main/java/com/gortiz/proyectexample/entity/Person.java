@@ -11,7 +11,7 @@ import javax.persistence.Temporal;
 
 import javax.persistence.Column;
 import javax.persistence.TemporalType;
-//import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -25,7 +25,7 @@ public class Person implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
 	@NotEmpty
 	private String firstname;
@@ -40,17 +40,17 @@ public class Person implements Serializable {
 	@Email
 	private String email;
 
-	
+	@NotNull
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createAt;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -94,17 +94,7 @@ public class Person implements Serializable {
 		this.createAt = createAt;
 	}
 
-	public Person() {
-		super();
-	}
-
-	@Override
-	public String toString() {
-		return "Person [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", country=" + country
-				+ ", email=" + email + ", createAt=" + createAt + "]";
-	}
-
-
+	
 
 	
 	
