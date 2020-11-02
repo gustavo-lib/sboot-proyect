@@ -11,7 +11,7 @@ import com.gortiz.proyectexample.entity.Person;
 import com.gortiz.proyectexample.repository.PersonRepository;
 import com.gortiz.proyectexample.service.personService;
 
-@Service("personImp")
+@Service("personImpl")
 public class servicePersonImpl implements personService {
 
 	@Autowired

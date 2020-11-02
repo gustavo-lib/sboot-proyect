@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 public class Provider {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private long id;
 
     private String firstname;
     private String lastname;
@@ -40,10 +40,10 @@ public class Provider {
 		product.add(p);
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getFirstname() {
@@ -74,6 +74,11 @@ public class Provider {
 		this.lastname = lastname;
 		this.address = address;
 		product=new HashSet<Product>();
+	}
+	@Override
+	public String toString() {
+		return "Provider [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", address=" + address
+				+ ", product=" + product + "]";
 	}
 	
 	

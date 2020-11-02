@@ -60,24 +60,22 @@
 					<th scope="col">Id</th>
 					<th scope="col">Firs name</th>
 					<th scope="col">Last name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Country</th>
+					<th scope="col">Address</th>
 					<th scope="col">Edit</th>
 					<th scope="col">Delete</th>
 				</tr>
 			</thead>
-			<tbody th:each="person : ${list}">
+			<tbody th:each="proveedor : ${list}">
 				<tr>
 
-					<td th:text=${person.id}></td>
-					<td th:text=${person.firstname}></td>
-					<td th:text=${person.lastname}></td>
-					<td th:text=${person.email}></td>
-					<td th:text=${person.country}></td>
-					<td><a th:href="@{edit/{id}(id=${person.id})}" 
+					<td th:text=${proveedor.id}></td>
+					<td th:text=${proveedor.firstname}></td>
+					<td th:text=${proveedor.lastname}></td>
+					<td th:text=${proveedor.address}></td>
+					<td><a th:href="@{edit/{id}(id=${proveedor.id})}" 
 						class="btn btn-success btn-sm ">Edit</a></td>
 
-					<td><a th:href="@{delete/{id}(id=${person.id})}" 
+					<td><a th:href="@{delete/{id}(id=${proveedor.id})}" 
 						class="btn btn-danger btn-sm  ">Delete</a></td>
 				</tr>
 

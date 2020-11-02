@@ -31,7 +31,7 @@ public class indexController {
 
 		
 	@Autowired
-	@Qualifier("personImp")
+	@Qualifier("personImpl")
 	private personService personService;
 	List<Person> people =new ArrayList<>();
 	private static final Logger logger = LoggerFactory.getLogger(indexController.class);
