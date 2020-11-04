@@ -44,11 +44,10 @@ public class Product {
 	public void setProvider(Provider provider) {
 		this.provider = provider;
 	}
-	public Product(String name, float price, Provider provider ) {
-		super();
+	public Product(String name, float price ) {
 		this.name = name;
 		this.price = price;
-		this.provider = provider;
+		
 	}
 
 	
