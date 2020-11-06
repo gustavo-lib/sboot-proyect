@@ -1,5 +1,6 @@
 package com.gortiz.proyectexample.entity;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,7 +14,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Provider {
+public class Provider implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -24,20 +30,21 @@ public class Provider {
    
     @OneToMany(mappedBy = "provider", fetch = FetchType.LAZY,
     cascade = CascadeType.ALL)
-    private Set<Product> product;
+    private Set<Product> productos;
     
-    
+    //@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+	//private List<Factura> facturas;
     
 	
 	public Set<Product> getProduct() {
-		return product;
+		return productos;
 	}
 	public void setProduct(Set<Product> product) {
-		this.product = product;
+		this.productos = product;
 	}
 	
 	public void addProduct(Product p) {
-		product.add(p);
+		productos.add(p);
 	}
 
 	public long getId() {
@@ -64,21 +71,35 @@ public class Provider {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Provider() {
+	/*public Provider(String string, String string2, String string3, Set<com.gortiz.proyectexample.controller.Product> lista_producto) {
 		product=new HashSet<Product>();
 		
-	}
+	}*/
 	public Provider(String firstname, String lastname, String address) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.address = address;
-		product=new HashSet<Product>();
+		productos=new HashSet<Product>();
+	}
+	
+	
+	public Provider(String firstname, String lastname, String address, Set<Product> product) {
+		
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.address = address;
+		this.productos = product;
+	}
+	
+	public Provider() {
+		productos= new  HashSet<Product>();
+		
 	}
 	@Override
 	public String toString() {
 		return "Provider [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", address=" + address
-				+ ", product=" + product + "]";
+				+ ", product=" + productos + "]";
 	}
 	
 	

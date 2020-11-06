@@ -3,8 +3,12 @@ package com.gortiz.proyectexample.service.serviceImp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import com.gortiz.proyectexample.entity.Product;
 import com.gortiz.proyectexample.entity.Provider;
+import com.gortiz.proyectexample.service.productService;
 import com.gortiz.proyectexample.service.providerService;
 import com.gortiz.proyectexample.repository.ProviderRepository;
 
@@ -13,6 +17,10 @@ public class serviceProviderImpl implements providerService {
 
 	@Autowired
 	ProviderRepository providerRepository; 
+	
+	@Autowired
+	@Qualifier("repositoryProduct")
+	productService productRepository ;
 	
 	@Override
 	public List<Provider> getProvider() {
@@ -42,6 +50,13 @@ public class serviceProviderImpl implements providerService {
 	@Override
 	public void delete(long id) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveProducto(Product p) {
+		// TODO Auto-generated method stub
+		productRepository.createProduct(p);
 		
 	}
 
