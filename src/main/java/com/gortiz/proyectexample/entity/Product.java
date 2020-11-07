@@ -18,12 +18,13 @@ public class Product implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private float price;
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	
     //@JoinColumn(name = "provider_id", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Provider provider;
 	
 	public Long getId() {

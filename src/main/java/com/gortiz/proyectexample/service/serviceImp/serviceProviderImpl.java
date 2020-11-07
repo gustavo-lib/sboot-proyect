@@ -16,11 +16,12 @@ import com.gortiz.proyectexample.repository.ProviderRepository;
 public class serviceProviderImpl implements providerService {
 
 	@Autowired
+	@Qualifier("respositoryProvider")
 	ProviderRepository providerRepository; 
 	
-	@Autowired
+	/*@Autowired
 	@Qualifier("repositoryProduct")
-	productService productRepository ;
+	productService productRepository ;*/
 	
 	@Override
 	public List<Provider> getProvider() {
@@ -32,6 +33,7 @@ public class serviceProviderImpl implements providerService {
 	@Override
 	public Provider findProvider(long id) {
 		// TODO Auto-generated method stub
+		//return providerRe
 		return null;
 	}
 
@@ -53,10 +55,17 @@ public class serviceProviderImpl implements providerService {
 		
 	}
 
-	@Override
 	public void saveProducto(Product p) {
 		// TODO Auto-generated method stub
-		productRepository.createProduct(p);
+		//productRepository.createProduct(p);
+		
+	}
+
+	
+	@Override
+	public Provider fetchByIdWithProvider(Long id) {
+		// TODO Auto-generated method stub
+		return providerRepository.fecthfetchByIdWithProduct(id);
 		
 	}
 

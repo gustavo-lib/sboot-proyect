@@ -1,7 +1,5 @@
 package com.gortiz.proyectexample.controller;
 
-import java.util.ArrayList;
-
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.gortiz.proyectexample.entity.Provider;
 import com.gortiz.proyectexample.service.productService;
 import com.gortiz.proyectexample.service.providerService;
 
@@ -42,10 +39,7 @@ public class Product {
 	public ModelAndView start_product() {
 		logger.info("------------OBTENIENDO LA LISTA DE PROVEEDORES------------");
 		ModelAndView model=new ModelAndView("product");
-	    Provider p= new Provider("hhh","jjj", "fff");
-	    providerService.createProvider(p);
 	    
-	    model.addAttribute("list",providerService.getProvider());
 		return model;
 		//return "product";
 	}

@@ -21,14 +21,14 @@ public class Provider implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
     private String firstname;
     private String lastname;
     private String address;
    
-    @OneToMany(mappedBy = "provider", fetch = FetchType.LAZY,
+    @OneToMany(mappedBy = "provider", fetch = FetchType.LAZY,orphanRemoval = true,
     cascade = CascadeType.ALL)
     private Set<Product> productos;
     
