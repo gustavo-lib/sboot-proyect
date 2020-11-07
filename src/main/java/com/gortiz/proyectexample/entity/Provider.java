@@ -18,17 +18,17 @@ public class Provider implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final Long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
     private String firstname;
     private String lastname;
     private String address;
    
-    @OneToMany(mappedBy = "provider", fetch = FetchType.LAZY,orphanRemoval = true,
+    @OneToMany(mappedBy = "provider", fetch = FetchType.EAGER,orphanRemoval = true,
     cascade = CascadeType.ALL)
     private Set<Product> productos;
     
@@ -47,10 +47,10 @@ public class Provider implements Serializable {
 		productos.add(p);
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFirstname() {

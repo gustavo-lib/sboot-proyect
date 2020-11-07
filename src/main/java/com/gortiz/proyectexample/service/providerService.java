@@ -9,17 +9,13 @@ public interface providerService {
 
 	List<Provider> getProvider();
 	
-    public Provider findProvider(long id);
+    public Provider findProvider(Long id);
 	
 	public Provider createProvider(Provider p);
 	
 	public Provider update(Provider p);
 	
-	public void delete(long id);
-	
-	
+	public void delete(Long id);
 	
 	public Provider fetchByIdWithProvider(Long id);
-
-	
 }

@@ -9,7 +9,7 @@ import com.gortiz.proyectexample.entity.Provider;
 @Repository("respositoryProvider")
 public interface ProviderRepository extends JpaRepository<Provider, Long>{
 	
-	@Query("select * from provider left join product where (product.provider_id=1 and provider.id=1)")
+	@Query("select * from provider where provider.id=?1 ")
 	public Provider fecthfetchByIdWithProduct(Long id);
 
 }

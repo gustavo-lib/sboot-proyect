@@ -50,7 +50,8 @@ public class Product {
 		//Person personFind= personSe.findPerson(id);//this.people.get(id);
 		//Provider p =provider.getClass()
 		//model.addAttribute("person",personFind);
-		//logger.info("OBJECT TO EDIT   "+ personFind.toString());
+		logger.info("OBJECT TO EDIT---------------------------------------------------------------------------------------------------------------   ");
+		providerService.fetchByIdWithProvider(id);
 		return "edit";
 	}
 

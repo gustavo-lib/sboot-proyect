@@ -2,6 +2,8 @@ package com.gortiz.proyectexample.service.serviceImp;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -19,9 +21,6 @@ public class serviceProviderImpl implements providerService {
 	@Qualifier("respositoryProvider")
 	ProviderRepository providerRepository; 
 	
-	/*@Autowired
-	@Qualifier("repositoryProduct")
-	productService productRepository ;*/
 	
 	@Override
 	public List<Provider> getProvider() {
@@ -31,7 +30,7 @@ public class serviceProviderImpl implements providerService {
 	}
 
 	@Override
-	public Provider findProvider(long id) {
+	public Provider findProvider(Long id) {
 		// TODO Auto-generated method stub
 		//return providerRe
 		return null;
@@ -50,7 +49,7 @@ public class serviceProviderImpl implements providerService {
 	}
 
 	@Override
-	public void delete(long id) {
+	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -61,8 +60,7 @@ public class serviceProviderImpl implements providerService {
 		
 	}
 
-	
-	@Override
+		
 	public Provider fetchByIdWithProvider(Long id) {
 		// TODO Auto-generated method stub
 		return providerRepository.fecthfetchByIdWithProduct(id);

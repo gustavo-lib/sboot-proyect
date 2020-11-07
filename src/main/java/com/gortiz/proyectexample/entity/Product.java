@@ -24,7 +24,7 @@ public class Product implements Serializable{
 	private float price;
 	
     //@JoinColumn(name = "provider_id", nullable = false)
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Provider provider;
 	
 	public Long getId() {
