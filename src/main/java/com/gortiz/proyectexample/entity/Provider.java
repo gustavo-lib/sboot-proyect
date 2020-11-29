@@ -1,52 +1,29 @@
 package com.gortiz.proyectexample.entity;
 
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Provider implements Serializable {
-	/**
-	 * 
-	 */
-	private static final Long serialVersionUID = 1L;
-
+public class Provider {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY )
 	private Long id;
 
     private String firstname;
     private String lastname;
     private String address;
-   
-    @OneToMany(mappedBy = "provider", fetch = FetchType.EAGER,orphanRemoval = true,
-    cascade = CascadeType.ALL)
-    private Set<Product> productos;
     
-    //@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-	//private List<Factura> facturas;
+    @OneToMany( fetch = FetchType.LAZY)//mappedBy="provider" ,
+    @JoinColumn(name="provider_fk")
+    private List<Product> product;
     
-	
-	public Set<Product> getProduct() {
-		return productos;
-	}
-	public void setProduct(Set<Product> product) {
-		this.productos = product;
-	}
-	
-	public void addProduct(Product p) {
-		productos.add(p);
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -71,37 +48,10 @@ public class Provider implements Serializable {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	/*public Provider(String string, String string2, String string3, Set<com.gortiz.proyectexample.controller.Product> lista_producto) {
-		product=new HashSet<Product>();
-		
-	}*/
-	public Provider(String firstname, String lastname, String address) {
-		super();
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.address = address;
-		productos=new HashSet<Product>();
-	}
-	
-	
-	public Provider(String firstname, String lastname, String address, Set<Product> product) {
-		
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.address = address;
-		this.productos = product;
-	}
-	
 	public Provider() {
-		productos= new  HashSet<Product>();
-		
+		super();
 	}
-	@Override
-	public String toString() {
-		return "Provider [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", address=" + address
-				+ ", product=" + productos + "]";
-	}
-	
-	
     
+    
+
 }

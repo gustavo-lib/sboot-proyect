@@ -10,63 +10,73 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<h1 class="text-center mb-7">Edit</h1>
 
-	<div class="container">
-		<form action="#"
-			th:action="@{/home/edit/{id}/update  (id=${person.id})}"
-			th:object="${person}" method="post">
-			<!-- 	 th:action="@{update}" th:object="${person}" method="post"> -->
+	<div class="bs-example">
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a href="#" th:href="@{/}" class="navbar-brand">GO</a>
+			<button type="button" class="navbar-toggler" data-toggle="collapse"
+				data-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-
-			<div class="col-md-3 mb-3">
-				<label for="validationDefault04">Id</label> <input type="text"
-					th:field="*{id}" readonly class="form-control"
-					id="validationDefault04" required>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav">
+					<a href="#" class="nav-item nav-link active">Home</a> <a
+						th:href="@{/home/product}" class="nav-item nav-link">Products</a>
+					<a th:href="@{/about/home}" class="nav-item nav-link">About</a>
+				</div>
+				<form class="form-inline ml-auto">
+					<input type="text" class="form-control mr-sm-2"
+						placeholder="Search">
+					<button type="submit" class="btn btn-outline-light">Search</button>
+				</form>
 			</div>
-			<div class="form-row">
-
-
-				<div class="col-md-4 mb-3">
-
-
-					<label for="validationDefault01">First name</label> <input
-						type="text" th:field="*{firstname}" class="form-control"
-						id="validati6onDefault01" placeholder="First name" required>
-				</div>
-				<div class="col-md-4 mb-3">
-					<label for="validationDefault02">Last name</label> <input
-						type="text" class="form-control" th:field="*{lastname}"
-						id="validationDefault02" placeholder="Last name" value="Otto"
-						required>
-				</div>
-				<div class="col-md-4 mb-3">
-					<label for="validationDefaultUsername">Email</label>
-					<div class="input-group">
-
-						<input type="email" class="form-control" th:field="*{email}"
-							id="validationDefaultUsername"
-							aria-describedby="inputGroupPrepend2" required>
-					</div>
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="col-md-6 mb-3">
-					<label for="validationDefault03">Country</label> <input type="text"
-						th:field="*{country}" class="form-control"
-						id="validationDefault03" placeholder="City" required>
-				</div>
-
-
-			</div>
-
-			<button class="btn btn-success" type="submit">Update</button>
-
-
-			<a href="" th:href="@{/home/list}" class="btn btn-danger"
-				role="button">Cancel</a>
-		</form>
+		</nav>
 	</div>
+
+
+	<!-- table  -->
+	<div class="container mt-5">
+		<h1>Information</h1>
+
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
+			ad dolore rem facere soluta error excepturi placeat sunt omnis
+			nostrum quis non molestiae aperiam temporibus architecto, corporis
+			cumque dolores natus.</p>
+		<br>
+
+		<!-- <span th:text=${persona.firstname} </span> -->
+		<a href="/home/showform" class="btn btn-primary btn-lg"> New</a>
+
+		<div class="table-responsive">
+			<table class="table mt-2 text-center ">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Name</th>
+						<th scope="col">Price</th>
+						
+						
+					</tr>
+				</thead>
+				<tbody th:each="producto : ${list}">
+					<tr>
+
+						<td th:text=${producto.id}></td>
+						<td th:text=${producto.name}></td>
+						<td th:text=${producto.price}></td>
+						
+						
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>

@@ -9,76 +9,57 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.gortiz.proyectexample.service.productService;
-import com.gortiz.proyectexample.service.providerService;
+import com.gortiz.proyectexample.service.ProductService;
+import com.gortiz.proyectexample.service.ProviderService;
+
+
 
 @Controller
 @RequestMapping("/home/")
 public class Product {
 	
-	@Autowired
-	@Qualifier("providerImpl")
-	private providerService providerService;
 	
-	@Autowired
-	@Qualifier("productImpl")
-	private productService productService ;
 	
 	//List<Provider> provider =new ArrayList<>();
 	private static final Logger logger = LoggerFactory.getLogger(Product.class);
 	
+	@Autowired
+	@Qualifier("serviceProviderImpl")
+	private ProviderService providerService;
 	
-	
-	
+	@Autowired
+	@Qualifier("serviceProductImp")
+	private ProductService productService;
 
 
 	@GetMapping("product")
 	public ModelAndView start_product() {
-		logger.info("------------OBTENIENDO LA LISTA DE PROVEEDORES------------");
+		logger.info("-----------------------OBTENIENDO LA LISTA DE PROVEEDORES---------------------------------------------");
 		ModelAndView model=new ModelAndView("product");
-	    
+	    model.addObject("list", providerService.getListProvider());
 		return model;
-		//return "product";
 	}
 
 	
 	@GetMapping("edit2/{id}")
 	public String editPerson(@PathVariable("id") long id, Model model) {
-		//Person personFind= personSe.findPerson(id);//this.people.get(id);
-		//Provider p =provider.getClass()
-		//model.addAttribute("person",personFind);
-		logger.info("OBJECT TO EDIT---------------------------------------------------------------------------------------------------------------   ");
-		providerService.fetchByIdWithProvider(id);
+		logger.info("----------------------OBTENIENDO LISTA DE PRODUCTOS POR PROVEEDOR------------------------------------------------   ");
+		model.addAttribute("list",productService.buscarproductos(id));
 		return "edit";
 	}
-
-	/*
-	 * 	//model.addObject("list", providerService.getProvider());
-		//Provider p =new Provider("Ana", "Prueba", "Sarmiento 2222",lista_producto);
-	//	ser
-		
-		Set<Product > lista_producto = new HashSet<Product>(); 
-		Product prod=new  Product("dsa",25.1); 
-		//productService.createProduct(prod);
-		lista_producto.add(prod);
-		Provider proveedor =new Provider("nombre_proveedor","apellido_proveedor","direccion_proveedor");
-		Provider proveedor2 =new Provider("nombre_proveedor2","apellido_proveedor2","direccion_proveedor2");
-		providerService.createProvider(proveedor);
-		providerService.createProvider(proveedor2);
-		
-		Set<Provider> lista_producto2 = new HashSet<Prodiver>(); 
-		//p.setProduct(lista_producto);
-		//p.setProduct(lista_producto);
-		
-		
-		
-		
-		
-		//p.setProduct(lista_producto);
-		
-		model.addObject("list", providerService.getProvider());*/
 	
+	@GetMapping("form_proveedor")
+	public String formProv() {
+		return "formProv";
+	}
+	
+	@PostMapping("saveProv")
+	public String saveProv() {
+		return "a";
+	}
+
 }
