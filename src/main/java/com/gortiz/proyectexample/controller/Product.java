@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gortiz.proyectexample.entity.Person;
+import com.gortiz.proyectexample.entity.Provider;
 import com.gortiz.proyectexample.service.ProductService;
 import com.gortiz.proyectexample.service.ProviderService;
 
@@ -52,9 +54,10 @@ public class Product {
 		return "edit";
 	}
 	
-	@GetMapping("form_proveedor")
-	public String formProv() {
-		return "formProv";
+	@GetMapping("form")
+	public String formProv(Model model) {
+		model.addAttribute("provider", new Provider());
+		return "prov";
 	}
 	
 	@PostMapping("saveProv")

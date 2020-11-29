@@ -23,7 +23,7 @@
 
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<div class="navbar-nav">
-					<a href="#" class="nav-item nav-link active">Home</a>
+					<a th:href="@{/home/list}" class="nav-item nav-link active">Home</a>
 				    
 					<a th:href="@{/home/product}"
 						class="nav-item nav-link">Products</a>
@@ -42,7 +42,7 @@
 
 	<!-- table  -->
 	<div class="container mt-5">
-		<h1>Information</h1>
+		<h1>Information Provider </h1>
 
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
 			ad dolore rem facere soluta error excepturi placeat sunt omnis
@@ -51,7 +51,7 @@
 		<br>
 
 		<!-- <span th:text=${persona.firstname} </span> -->
-		<a href="/home/showform" class="btn btn-primary btn-lg"> New</a>
+		<a href="/home/form" class="btn btn-primary btn-lg"> New</a>
 		
 		<div class="table-responsive">
 		<table class="table mt-2 text-center ">

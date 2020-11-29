@@ -49,7 +49,7 @@ public class indexController {
 		Person personFind= personService.findPerson(id);//this.people.get(id);
 		model.addAttribute("person",personFind);
 		logger.info("OBJECT TO EDIT   "+ personFind.toString());
-		return "edit";
+		return "editperson";
 	}
 	
 	@PostMapping("edit/{id}/update")
@@ -76,7 +76,7 @@ public class indexController {
 	@PostMapping("add")
 	public String redirect(@ModelAttribute("person") Person p) {
 		//falta la validacion de persona que no sean nulos y ademas que no sean tipos de datos erroneos
-		logger.info("OBJECT ADD "+ p.toString());
+		logger.info("----OBJECT ADD----- "+ p.toString());
 		personService.createPerson(p);
 		return "redirect:list";
 	}

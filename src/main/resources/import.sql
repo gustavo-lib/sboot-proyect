@@ -1,6 +1,6 @@
 INSERT INTO person (country, create_at, email,firstname,lastname) VALUES('Los pinos 365', '2020-10-10', 'Rocio', 'fabiana','adfds');
 
-INSERT INTO provider (address, firstname, lastname) VALUES('Los pinos 365',' Ricarte', 'Rocio');
+INSERT INTO provider (address, firstname, lastname) VALUES('Los pinos 365',' lucia', 'Rocio');
 INSERT INTO provider (address, firstname, lastname) VALUES('Cornejo 25',' Peralta', 'Ana');
 
 

@@ -17,7 +17,7 @@
 	<h1 class="text-center mb-7">Add</h1>
 	
 	<div class="container">
-		<form th:object="${person}" method="post" action="#"  th:action="@{add}">
+		<form th:object="${provider}" method="post" action="#"  th:action="">
 			<div class="col-md-3 mb-3">
 				<label for="validationDefault04">Id</label> 
 				<input type="text"
@@ -39,10 +39,10 @@
 						required>
 				</div>
 				<div class="col-md-4 mb-3">
-					<label for="validationDefaultUsername">Email</label>
+					<label for="validationDefaultUsername">Price</label>
 					<div class="input-group">
 
-						<input type="email" class="form-control" th:field="*{email}"
+						<input type="numeric" class="form-control" th:field="*{email}"
 							id="validationDefaultUsername"
 							aria-describedby="inputGroupPrepend2" required>
 					</div>
@@ -59,7 +59,7 @@
 			</div>
 
 			<button class="btn btn-success" type="submit">Save</button>
-			<a href="" th:href="@{/home/list}" class="btn btn-danger" role="button">Cancel</a>
+			<a href="" th:href="@{/home/product}" class="btn btn-danger" role="button">Cancel</a>
 		</form>
 
 

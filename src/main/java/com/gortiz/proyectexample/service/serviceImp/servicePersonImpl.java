@@ -40,8 +40,9 @@ public class servicePersonImpl implements personService {
 	@Override
 	public Person createPerson(Person p) {
 		// TODO Auto-generated method stub
-		personRepository.save(p);
-		return null;
+		System.out.println("**************** "+p.toString());
+		return personRepository.save(p);
+		
 	}
 
 	@Override
