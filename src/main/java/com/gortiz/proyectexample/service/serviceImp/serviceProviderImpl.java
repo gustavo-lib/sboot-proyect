@@ -34,7 +34,8 @@ public class ServiceProviderImpl implements ProviderService {
 	@Override
 	public Provider createProvider(Provider p) {
 		// TODO Auto-generated method stub
-		return null;
+		return providerRepository.save(p);
+		//return null;
 	}
 
 	@Override

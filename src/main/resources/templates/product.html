@@ -72,8 +72,8 @@
 					<td th:text=${proveedor.firstname}></td>
 					<td th:text=${proveedor.lastname}></td>
 					<td th:text=${proveedor.address}></td>
-					<td><a th:href="@{edit2/{id}(id=${proveedor.id})}" 
-						class="btn btn-success btn-sm ">View Product</a></td>
+					<td><a th:href="@{viewproduct/{id}(id=${proveedor.id})}" 
+						class=" btn btn-success btn-sm ">View </a></td>
 
 					<td><a th:href="@{delete/{id}(id=${proveedor.id})}" 
 						class="btn btn-danger btn-sm  ">Delete</a></td>
