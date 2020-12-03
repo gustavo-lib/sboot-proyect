@@ -32,11 +32,11 @@ public class Product {
 	private static final Logger logger = LoggerFactory.getLogger(Product.class);
 	
 	@Autowired
-	@Qualifier("serviceProviderImpl")
+	@Qualifier("providerImpl")
 	private ProviderService providerService;
 	
 	@Autowired
-	@Qualifier("serviceProductImp")
+	@Qualifier("productImpl")
 	private ProductService productService;
 
 

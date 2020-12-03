@@ -5,7 +5,7 @@ import java.util.List;
 import com.gortiz.proyectexample.entity.Person;
 
 
-public interface personService {
+public interface PersonService {
 
 	public Person findPerson(long id);
 	

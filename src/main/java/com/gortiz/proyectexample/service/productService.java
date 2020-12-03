@@ -6,7 +6,7 @@ import com.gortiz.proyectexample.entity.Product;
 
 public interface ProductService {
 
-public Product findProduct(Long id);
+    public Product findProduct(Long id);
 	
 	public List<Product> getListProduct();
 	

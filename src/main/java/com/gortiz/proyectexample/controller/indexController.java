@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.gortiz.proyectexample.entity.Person;
-import com.gortiz.proyectexample.service.personService;
+import com.gortiz.proyectexample.service.PersonService;
 
 
 /*
@@ -32,7 +32,7 @@ public class indexController {
 		
 	@Autowired
 	@Qualifier("personImpl")
-	private personService personService;
+	private PersonService personService;
 	List<Person> people =new ArrayList<>();
 	private static final Logger logger = LoggerFactory.getLogger(indexController.class);
 

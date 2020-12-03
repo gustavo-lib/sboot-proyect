@@ -11,7 +11,7 @@ import com.gortiz.proyectexample.entity.Product;
 import com.gortiz.proyectexample.repository.ProductRepository;
 import com.gortiz.proyectexample.service.ProductService;
 
-@Service("serviceProductImp")
+@Service("productImpl")
 public class ServiceProductImpl  implements ProductService{
 
 	@Autowired

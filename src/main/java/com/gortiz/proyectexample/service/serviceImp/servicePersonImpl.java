@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 
 import com.gortiz.proyectexample.entity.Person;
 import com.gortiz.proyectexample.repository.PersonRepository;
-import com.gortiz.proyectexample.service.personService;
+import com.gortiz.proyectexample.service.PersonService;
 
 @Service("personImpl")
-public class servicePersonImpl implements personService {
+public class ServicePersonImpl implements PersonService {
 
 	@Autowired
 	private PersonRepository personRepository;
@@ -24,7 +24,7 @@ public class servicePersonImpl implements personService {
 		if (optional.isPresent()) {
 			 p = optional.get();
 		} else {
-			throw new RuntimeException(" La persona no fue encontrada cajetudo  :: " + id);
+			throw new RuntimeException(" La persona no fue encontrada   :: " + id);
 		}
 		return p;
 		// return null;

@@ -11,7 +11,7 @@ import com.gortiz.proyectexample.repository.ProviderRepository;
 import com.gortiz.proyectexample.service.ProviderService;
 
 
-@Service("serviceProviderImpl")
+@Service("providerImpl")
 public class ServiceProviderImpl implements ProviderService {
 
 	@Autowired
