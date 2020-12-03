@@ -1,4 +1,4 @@
-package com.gortiz.proyectexample.service.serviceImp;
+package com.gortiz.proyectexample.service.ServiceImp;
 
 import java.util.List;
 
