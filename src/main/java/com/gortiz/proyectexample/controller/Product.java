@@ -11,12 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.gortiz.proyectexample.entity.Person;
 import com.gortiz.proyectexample.entity.Provider;
+
 import com.gortiz.proyectexample.service.ProductService;
 import com.gortiz.proyectexample.service.ProviderService;
 
@@ -37,7 +35,7 @@ public class Product {
 	
 	@Autowired
 	@Qualifier("productImpl")
-	private ProductService productService;
+	private ProductService product;
 
 
 	@GetMapping("product")
@@ -52,7 +50,7 @@ public class Product {
 	@GetMapping("viewproduct/{id}")
 	public String editPerson(@PathVariable("id") long id, Model model) {
 		logger.info("----------------------OBTENIENDO LISTA DE PRODUCTOS POR PROVEEDOR--------------------------------------");
-		model.addAttribute("list",productService.buscarproductos(id));
+		model.addAttribute("list",product.buscarproductos(id));
 		return "listproduct";
 	}
 	
@@ -68,7 +66,7 @@ public class Product {
 	public String formShowProduct(@PathVariable("id") long id, Model model) {
 		Product p= new Product();
 		model.addAttribute("product", p);
-		//productService.createProduct(p);
+		//product.createProduct(p);
 		return "redirect:product";
 	}
 	
